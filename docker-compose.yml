@@ -1,0 +1,51 @@
+services:
+  dev:
+    image: node:22-bookworm
+    container_name: polling-dev
+    working_dir: /workspace
+    volumes:
+      - project-files:/workspace
+    command: sleep infinity
+
+  redis:
+    image: redis:7-alpine
+    container_name: polling-redis
+    command: redis-server --appendonly yes
+    volumes:
+      - redis-data:/data
+
+  server1:
+    image: node:22-bookworm
+    container_name: polling-server1
+    working_dir: /workspace
+    volumes:
+      - project-files:/workspace
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      SERVER_ID: server1
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      - redis
+    command: sleep infinity
+
+  server2:
+    image: node:22-bookworm
+    container_name: polling-server2
+    working_dir: /workspace
+    volumes:
+      - project-files:/workspace
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: 3001
+      SERVER_ID: server2
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      - redis
+    command: sleep infinity
+
+volumes:
+  project-files:
+  redis-data:

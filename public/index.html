@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Polling System</h1>
+        <p>Polling Application</p>
+        <div id="connectionStatus">Not connected</div>
+    </header>
+
+    <main>
+        <!-- Login Section -->
+        <section id="loginSection" class="panel">
+            <h2>Login</h2>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
+
+            <label for="role">Select Role</label>
+            <select id="role">
+                <option value="student">Student</option>
+                <option value="lecturer">Lecturer</option>
+            </select>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+
+            <button id="loginBtn">Login</button>
+            <p id="loginMessage"></p>
+        </section>
+
+        <!-- Application Section -->
+        <section id="appSection" class="hidden">
+
+            <div class="panel">
+                <h2>Welcome, <span id="currentUser"></span></h2>
+                <p>Role: <span id="currentRole"></span></p>
+                <p>Connected to: <strong id="serverName">-</strong></p>
+                <button id="logoutBtn" class="secondary">Logout</button>
+            </div>
+
+            <!-- Lecturer Section -->
+            <section id="lecturerSection" class="panel hidden">
+                <h2>Create a Poll</h2>
+
+                <label for="question">Poll Question</label>
+                <input type="text" id="question" placeholder="Enter your question">
+
+                <label>Poll Options</label>
+                <input type="text" class="pollOption" placeholder="Option 1">
+                <input type="text" class="pollOption" placeholder="Option 2">
+
+                <button id="addOptionBtn" class="secondary">Add Option</button>
+                <button id="createPollBtn">Launch Poll</button>
+                <button id="closePollBtn" class="danger">Close Poll</button>
+            </section>
+
+            <!-- Student Section -->
+            <section id="studentSection" class="panel hidden">
+                <h2>Cast Your Vote</h2>
+                <div id="studentOptions"></div>
+                <button id="voteBtn">Submit Vote</button>
+                <p id="voteMessage"></p>
+            </section>
+
+            <!-- Poll Information -->
+            <section class="panel">
+                <h2>Current Poll</h2>
+                <div id="pollInformation">No active poll.</div>
+                <div id="pollResults"></div>
+            </section>
+
+            <!-- Connected Users -->
+            <section class="panel">
+                <h2>Connected Users</h2>
+                <ul id="usersList"></ul>
+            </section>
+
+            <!-- Vote Records -->
+            <section class="panel">
+                <h2>Live Voting Records</h2>
+                <ul id="voteRecords"></ul>
+            </section>
+
+        </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>

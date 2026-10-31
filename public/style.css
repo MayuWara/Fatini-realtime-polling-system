@@ -1,0 +1,232 @@
+
+/* General page styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #dbeafe;
+}
+
+#connectionStatus {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #475569;
+    font-size: 13px;
+}
+
+/* Main content */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Panels */
+.panel {
+    background: white;
+    padding: 25px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.panel h2 {
+    color: #1e3a8a;
+    margin-bottom: 18px;
+    font-size: 21px;
+}
+
+/* Form elements */
+label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+/* Buttons */
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    margin: 8px 5px 5px 0;
+    border-radius: 7px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.secondary {
+    background: #64748b;
+}
+
+.secondary:hover {
+    background: #475569;
+}
+
+.danger {
+    background: #dc2626;
+}
+
+.danger:hover {
+    background: #b91c1c;
+}
+
+/* Poll options */
+.poll-choice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 7px;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.poll-choice input {
+    width: auto;
+    margin: 0;
+}
+
+/* Results */
+.result-item {
+    margin: 14px 0;
+}
+
+.result-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.progress {
+    height: 12px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #2563eb;
+    transition: width 0.3s ease;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+/* Utility classes */
+.hidden {
+    display: none !important;
+}
+
+#loginMessage,
+#voteMessage {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    main {
+        margin: 15px auto;
+        padding: 0 12px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+body {
+    background-color: #fff0f5;
+}
+
+h1, h2, h3 {
+    color: #c45b85;
+}
+
+button {
+    background-color: #e8a0b8;
+    color: white;
+}
+
+button:hover {
+    background-color: #d982a2;
+}
+
+input, select {
+    border-color: #e8b6c8;
+}
+
+.poll-choice {
+    background-color: #fff5f8;
+}
+
+.progress-bar {
+    background-color: #e8a0b8;
+}
